@@ -96,6 +96,7 @@ def _path_newline(data):
 
 def _gen_scrooge_srcjar_impl(ctx):
   remote_jars = set()
+  print 'GOT HERE!'
   for target in ctx.attr.remote_jars:
     remote_jars += _jar_filetype.filter(target.files)
 
@@ -217,6 +218,7 @@ scrooge_scala_srcjar = rule(
 
 def scrooge_scala_library(name, deps=[], remote_jars=[], jvm_flags=[], visibility=None):
     srcjar = name + '_srcjar'
+    print 'GOT HERE!'
     scrooge_scala_srcjar(
         name = srcjar,
         deps = deps,
